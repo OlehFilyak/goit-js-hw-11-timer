@@ -23,12 +23,10 @@ class CountdownTimer {
         let dateNow = Date.now() // a new date, time must be created each time the function is called
         let deltaTime = this.targetDate - dateNow
         // let oneYear = 31536000000;
-        if(deltaTime>0) {
-          this.calcDays(deltaTime)
-        } else {
+        if(deltaTime<0) {
             deltaTime += 31536000000;
-            this.calcDays(deltaTime)
         }
+        this.calcDays(deltaTime)
     }
   
     calcDays(deltaTime) {
